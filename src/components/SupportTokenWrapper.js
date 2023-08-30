@@ -1,5 +1,5 @@
 import { Contract, ethers } from 'ethers';
-import Wildpatron from "/home/ashi_unix/newwild/frontend/src/SupportToken.json"; // Corrected import path
+import Wildpatron from "../SupportToken.json"; // Corrected import path
 
 export async function donate(amount) {
   const contract = await getContract();

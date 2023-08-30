@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import image from  "/home/ashi_unix/newwild/frontend/src/images/wildpatron.jpg"
+import image from  "../images/wildpatron.jpg"
 
 const WaitlistSignup = () => {
   const handleSignup = () => {

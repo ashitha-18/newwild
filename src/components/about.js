@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import image from  "/home/ashi_unix/newwild/frontend/src/images/22.jpeg"
+import image from  "../images/22.jpeg"
 const About = () => {
   return (
     <div
