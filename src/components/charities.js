@@ -49,7 +49,7 @@ const CharityCard = ({
               onChange={(event) => setDonationAmount(event.target.value)}
             />
           </div>
-        <Button variant="primary" style={{margin : '10px',}}>Donate</Button>
+        <Button variant="primary" onClick={handleDonationSubmit} style={{margin : '10px',}}>Donate</Button>
         </form>
       </Card.Body>
     </Card>
