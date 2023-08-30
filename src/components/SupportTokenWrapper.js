@@ -23,7 +23,7 @@ export async function donate(amount) {
     console.log("Final Tx:", finalTx);
   } catch (error) {
     console.error("Donation error:", error);
-    throw error; // Rethrow the error for handling in the calling function
+    throw error; 
   }
 }
 
