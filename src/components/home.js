@@ -4,7 +4,11 @@ import image from  "../images/wildpatron.jpg"
 
 const WaitlistSignup = () => {
   const handleSignup = () => {
-    // Handle signup logic here
+    // URL of your Google Form
+    const googleFormUrl = 'https://forms.gle/VS242ujEjve4PVr16';
+
+    // Open the Google Form in a new tab
+    window.open(googleFormUrl, '_blank');
   };
 
   return (
