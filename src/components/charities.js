@@ -13,9 +13,8 @@ const CharityCard = ({
 }) => {
   const [donationAmount, setDonationAmount] = useState("");
   
-
   
-
+  
 
 
   const handleDonationSubmit = (event) => {
@@ -23,6 +22,7 @@ const CharityCard = ({
     onDonate(donationAmount);
     setDonationAmount("");
   };
+  
 
   return (
     <div className="charity-card">
@@ -102,8 +102,10 @@ const Charities = () => {
 
   const handleDonate = async (amount) => {
     try {
-      await donate(amount);
-      alert("Donation successful!");
+      const donationResult = await donate(amount);
+      if (donationResult) {
+        alert("Donation successful!");
+      }
     } catch (error) {
       console.error(error);
     }
