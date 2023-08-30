@@ -1,5 +1,5 @@
 import { Contract, ethers } from 'ethers';
-import Wildpatron from "/home/ashi_unix/newwild/frontend/src/SupportToken.json"; // Corrected import path
+import Wildpatron from "frontend/src/SupportToken.json"; 
 
 export async function donate(amount) {
   const contract = await getContract();
@@ -23,7 +23,7 @@ export async function donate(amount) {
     console.log("Final Tx:", finalTx);
   } catch (error) {
     console.error("Donation error:", error);
-    throw error; // Rethrow the error for handling in the calling function
+    throw error; 
   }
 }
 
