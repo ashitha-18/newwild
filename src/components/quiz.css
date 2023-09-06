@@ -1,0 +1,465 @@
+/******************
+  FONT REF:
+  font-family: 'Caveat Brush', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lily Script One', cursive;
+******************/
+
+
+*{
+    box-sizing: border-box;
+  }
+  
+  img{
+    max-width: 100%;
+  }
+  body{
+    font-family: 'Open Sans', sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  /******************
+  HEADER
+  ******************/
+  .headerTitle{
+    margin-top: 60px;
+    font-family: 'Lily Script One', cursive;
+    font-size: 4em;
+    text-align: center;
+    color: #0073ff;
+  }
+  
+  .headerText{
+    width: 70%;
+    margin: 0 auto;
+    font-weight: bolder;
+    font-size: 1.2em;
+  }
+  
+  /******************
+  HEADER CIRCLE
+  ******************/
+  
+  header{
+    position: relative;
+    top : 600px;
+    
+  }
+  
+  @keyframes swing{
+    0%{
+      bottom: 340px;
+      left: 250px;
+    }
+    100%{
+      bottom: 180px;
+      left: 150px;
+    }
+  }
+  
+  #circleDeco{
+    animation: swing 1s ease forwards;
+    z-index: -3;
+  }
+  
+  
+  .circleDeco{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #f8d990;
+    position: absolute;
+    bottom: 300px;
+    left: 250px;
+    overflow: hidden;
+  }
+  
+  /******************
+  HEADER ARROW
+  ******************/
+  
+  @keyframes bounce {
+    0%, 100%{
+      transform: translate(0px, 40px);
+    }
+    50%{
+      transform: translate(0px, 30px);
+    }
+  }
+  
+  #arrow{
+    position: relative;
+    animation: bounce .8s infinite ease-in;
+    margin-left: 50%;
+  }
+  
+  .arrowDiv{
+    text-align: center;
+  }
+  /******************
+  QUESTIONS
+  ******************/
+  .questions{
+    position:relative;
+    top: 500px;/* Adjust the margin as needed */
+}
+  
+  
+  .title{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.6em;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1px 0;
+    color: white;
+  }
+  
+  /******************
+  QUESTIONS : COLOR
+  ******************/
+  .colorSelection {
+    width: 88%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .colorBlockSelection {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 110px;
+    height: 110px;
+    border: 2px solid transparent; /* Add a border to show selection */
+    cursor: pointer; /* Add pointer cursor for better UX */
+  }
+  
+  .colorBlockSelection p {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 5px; /* Adjust as needed */
+  }
+  
+  /* Style for selected color */
+  .colorBlockSelection input[type="radio"]:checked + p {
+    color: white; /* Change text color for selected label */
+  }
+  
+  .colorBlockSelection.red {
+    background: #ff5c5c;
+  }
+  
+  .colorBlockSelection.blue {
+    background: #5271ff;
+  }
+  
+  .colorBlockSelection.green {
+    background: #99e265;
+  }
+  
+  .colorBlockSelection.purple {
+    background: #b760e6;
+  }
+  
+  .colorBlockSelection.yellow {
+    background: #fff952;
+  }
+  
+  .colorBlockSelection.orange {
+    background: #ffbd49;
+  }
+  
+  input[type="radio"] {
+    display: none; /* Hide the default radio buttons */
+  }
+   
+  /**********************
+  QUESTIONS : FREE TIME
+  **********************/
+  
+  .timeTitle{
+    background: #f8a790;
+    margin-top: 40px;
+  }
+  
+  .timeSelection{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 25%;
+    
+  }
+  
+  .timeOption{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 1em;
+    font-weight: bolder;
+  }
+  
+  /**********************
+  QUESTIONS : PERSONALITY
+  **********************/
+  
+  .personalityTitle{
+    background: #002c60;
+  }
+  
+  .personalitySelection{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .personalityOption{
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .personalityOption label{
+    font-size: 1em;
+    font-weight: bolder;
+  }
+  
+  .one{
+    position: relative;
+    left: -10px;
+  }
+  
+  .three{
+    position: relative;
+    left: -22px;
+  }
+  
+  input[type=range]{
+      -webkit-appearance: none;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+      width: 200px;
+      height: 3px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #f8d990;
+      margin-top: -6px;
+  }
+  
+  input[type=range]:focus {
+      outline: none;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #ccc;
+  }
+  
+  input[type=range]{
+      /* fix for FF unable to apply focus style bug  */
+      border: 1px solid white;
+  
+      /*required for proper track sizing in FF*/
+      width: 200px;
+  }
+  
+  input[type=range]::-moz-range-track {
+      width: 200px;
+      height: 5px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #f8d990;
+  }
+  
+  /*hide the outline behind the border*/
+  input[type=range]:-moz-focusring{
+      outline: 1px solid white;
+      outline-offset: -1px;
+  }
+  
+  input[type=range]:focus::-moz-range-track {
+      background: #ccc;
+  }
+  
+  /**********************
+  QUESTIONS : SUBMIT
+  **********************/
+  .finalSubmit{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .submit{
+    
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background: #e45170;
+    transition: transform .2s, background-color .2s, box-shadow .1s;
+    box-shadow: 5px 5px 5px #bf445e;
+  }
+  .submit:hover{
+    transform: scale(.95);
+  }
+  
+  .submit:active{
+    transform: scale(.9);
+  }
+  
+  /********************
+  RESULT
+  *********************/
+  .resultArrow{
+     margin-bottom: 200px; 
+  }
+  .divTest{
+    background: pink;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #resArrow{
+    position: relative;
+    animation: bounce .8s infinite ease-in;
+  }
+  .resultTitle{
+    margin-top: 80px;
+    font-family: 'Lily Script One', cursive;
+    font-size: 4em;
+    text-align: center;
+    color: #002c60;
+  }
+  
+  .resultText{
+    width: 70%;
+    margin: 0 auto;
+    font-weight: bolder;
+    font-size: 1em;
+  }
+  .animalPic{
+    width: 500px;
+  }
+  .resultAnimal{
+    font-family: 'Caveat Brush', cursive;
+    font-size: 5em;
+    border: 10px solid #e45170 ;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 1px 0;
+    color: #e45170;
+  }
+    
+  /****************
+  MEDIA QUERY
+  *****************/
+  @media only screen and (max-width: 450px){
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 150px;
+    }
+    
+    input[type=range]::-moz-range-track {
+      width: 150px;
+    }
+    
+    input[type=range]{
+      /*required for proper track sizing in FF*/
+      width: 150px;
+  }
+  }
+  
+  @media only screen and (max-width: 400px){
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 130px;
+    }
+    
+    input[type=range]::-moz-range-track {
+      width: 130px;
+    }
+    
+    input[type=range]{
+      /*required for proper track sizing in FF*/
+      width: 130px;
+  }
+    
+    .personalityOption label{
+    font-size: .9em;
+  }
+    .headerTitle {
+      font-size: 3.5em;
+    }
+    
+    .title{
+  
+    width: 80%;
+  }
+  }
+  
+  @media only screen and (max-width: 350px){
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100px;
+    }
+    
+    input[type=range]::-moz-range-track {
+      width: 100px;
+    }
+    
+    input[type=range]{
+      /*required for proper track sizing in FF*/
+      width: 100px;
+  }
+    
+    .personalityOption label{
+    font-size: .9em;
+  }
+    
+    .colorBlockSelection{
+    margin-top: 15px;
+  }
+      .headerTitle {
+      font-size: 3.5em;
+    }
+    
+    .timeSelection{
+    margin-left: 20%;
+  
+  }
+  }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between; /* This will place Introvert on the left and Extrovert on the right */
+    margin-top: 0px; /* Adjust the margin as needed */
+    
+  }
+  .result{
+    position: relative;
+    top: 500px;
+  }
+  

@@ -10,13 +10,13 @@ import About from './about';
 function Mynavbar() {
   return (
     <Router>
-    <Navbar bg="dark" variant="dark">
+    <Navbar className="bg-black" variant="dark">
       <Container>
         
-        <Nav className="me-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/donate">Donate</Nav.Link>
+        <Nav className="ml-auto">
+          <Nav.Link href="/" className="text-orange-500 hover:text-orange-400 mx-2">Home</Nav.Link>
+          <Nav.Link href="/about" className="text-orange-500 hover:text-orange-400 mx-2">About</Nav.Link>
+          <Nav.Link href="/donate" className="text-orange-500 hover:text-orange-400 mx-2">Donate</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
