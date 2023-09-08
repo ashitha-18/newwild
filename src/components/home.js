@@ -23,7 +23,7 @@ const WaitlistSignup = () => {
       </button>
     </Container>
   </div>
-  <div className="w-1/2 relative relative overflow-y-auto">
+  <div className="w-1/2 relative relative overflow-y-auto" style={{backgroundColor: '#dddde5'}} >
     <Container className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-0 ">
     <Quiz></Quiz>
     </Container>

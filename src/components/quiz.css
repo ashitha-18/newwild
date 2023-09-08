@@ -19,90 +19,29 @@
     margin: 0 auto;
   }
   
-  /******************
-  HEADER
-  ******************/
-  .headerTitle{
-    margin-top: 60px;
-    font-family: 'Lily Script One', cursive;
-    font-size: 4em;
-    text-align: center;
-    color: #0073ff;
-  }
-  
-  .headerText{
-    width: 70%;
-    margin: 0 auto;
-    font-weight: bolder;
-    font-size: 1.2em;
-  }
-  
-  /******************
-  HEADER CIRCLE
-  ******************/
-  
-  header{
+  .quizdiv{
     position: relative;
-    top : 600px;
-    
+    top: 950px;
+    min-height: 100vh;
+    height: 3200px;
   }
-  
-  @keyframes swing{
-    0%{
-      bottom: 340px;
-      left: 250px;
-    }
-    100%{
-      bottom: 180px;
-      left: 150px;
-    }
+  .header{
+    position: relative;
+    height: 100vh;
   }
-  
-  #circleDeco{
-    animation: swing 1s ease forwards;
-    z-index: -3;
-  }
-  
-  
-  .circleDeco{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background-color: #f8d990;
-    position: absolute;
-    bottom: 300px;
-    left: 250px;
-    overflow: hidden;
-  }
-  
-  /******************
-  HEADER ARROW
-  ******************/
-  
-  @keyframes bounce {
-    0%, 100%{
-      transform: translate(0px, 40px);
-    }
-    50%{
-      transform: translate(0px, 30px);
-    }
-  }
-  
   #arrow{
     position: relative;
     animation: bounce .8s infinite ease-in;
-    margin-left: 50%;
+    margin-left: 60%;
   }
   
   .arrowDiv{
     text-align: center;
   }
-  /******************
-  QUESTIONS
-  ******************/
+/*
   .questions{
     position:relative;
-    top: 500px;/* Adjust the margin as needed */
+    top: 500px;/* Adjust the margin as needed 
 }
   
   
@@ -115,21 +54,39 @@
     padding: 1px 0;
     color: white;
   }
-  
+************/
   /******************
   QUESTIONS : COLOR
   ******************/
-  .colorSelection {
-    width: 88%;
+  .colorTitle.title h1 {
+    font-size: 24px; /* Adjust the font size to your preference */
+    color: #333; /* Set the text color to your preference */
+    margin: 0; /* Remove any default margin */
+    padding: 10px;
+    font-weight: bold; /* Add padding as needed */
+    /* Add any other styles you want */
+  }
+  .colorSection {
     margin: 0 auto;
     text-align: center;
+    top: 900px;
+    
+    position: relative;
+  }
+  .colorSelection {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 102px;
+    left: 38px;
   }
   
   .colorBlockSelection {
+    position: relative;
     display: inline-block;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-top: 50px;
+    margin-right: 59px;
+    margin-left: 17px;
     width: 110px;
     height: 110px;
     border: 2px solid transparent; /* Add a border to show selection */
@@ -142,72 +99,120 @@
     font-weight: bolder;
     margin-top: 5px; /* Adjust as needed */
   }
-  
-  /* Style for selected color */
-  .colorBlockSelection input[type="radio"]:checked + p {
-    color: white; /* Change text color for selected label */
+  .radio-custom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px; /* Adjust this value to your preference */
+    width: 20px; /* Adjust this value to your preference */
+    border: 2px solid #000; /* Style the custom radio button */
+    border-radius: 50%;
+    background-color: transparent; /* Make it round */
   }
-  
-  .colorBlockSelection.red {
-    background: #ff5c5c;
+
+  .colorBlockSelection input:checked + .radio-custom {
+    background-color: #000; /* Change the background color when checked */
   }
-  
-  .colorBlockSelection.blue {
-    background: #5271ff;
-  }
-  
-  .colorBlockSelection.green {
-    background: #99e265;
-  }
-  
-  .colorBlockSelection.purple {
-    background: #b760e6;
-  }
-  
-  .colorBlockSelection.yellow {
-    background: #fff952;
-  }
-  
-  .colorBlockSelection.orange {
-    background: #ffbd49;
-  }
-  
-  input[type="radio"] {
-    display: none; /* Hide the default radio buttons */
+  .colorBlockSelection input:checked + .radio-custom ~ p {
+    color: #fff; /* Change text color to white */
   }
    
   /**********************
   QUESTIONS : FREE TIME
   **********************/
-  
-  .timeTitle{
-    background: #f8a790;
-    margin-top: 40px;
+
+  .timeSection{
+    position: relative;
+    height: 100vh;
+    left: 100px;
+    top: 1080px;
   }
   
+  .timeTitle.title h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 30px;
+    padding: 30px;
+    font-weight: bold; /* Add this line to make the text bold */
+    /* Add any other styles you want */
+  }
+  
+  
   .timeSelection{
-    width: 80%;
     margin: 0 auto;
     text-align: left;
-    margin-top: 20px;
     margin-left: 25%;
     
   }
   
-  .timeOption{
+  .timeOption {
     display: inline-block;
+    margin-right: 20px;
     margin-bottom: 20px;
-    margin-left: 20px;
-    font-size: 1em;
-    font-weight: bolder;
+    font-weight: bold;
+    cursor: pointer;
+    
   }
+
+
+  /* Style for the checkbox input */
+.timeOption input[type="checkbox"] {
+  display: none; /* Hide the default checkbox input */
+}
+
+/* Style for the custom checkbox */
+.timeOption .custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   
+  border: 2px solid #333; /* Border style for the checkbox */
+  border-radius: 70%; /* Make it round */
+  cursor: pointer;
+}
+
+/* Style for the checked custom checkbox */
+.timeOption input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #333; /* Color when checked */
+  border-radius: 50%; /* Make the checkmark round */
+  display: block;
+}
+
+/* Style for the checked custom round checkbox */
+.timeOption input[type="checkbox"]:checked + .custom-checkbox::before {
+  content: ""; 
+  content: "\2713"; /* Unicode checkmark character */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #333; /* Color when checked */
+}
   /**********************
   QUESTIONS : PERSONALITY
   **********************/
   
+  .personalitySection{
+    position: relative;
+    height: 100vh;
+    top: 800px;
+    right: 75px;
+  }
   .personalityTitle{
-    background: #002c60;
+    font-size: 24px; 
+    color: #333; 
+    margin: 0; 
+    padding: 10px;
+    font-weight: bold; 
   }
   
   .personalitySelection{
@@ -237,14 +242,15 @@
     left: -22px;
   }
   
-  input[type=range]{
-      -webkit-appearance: none;
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none; 
   }
   
   input[type=range]::-webkit-slider-runnable-track {
       width: 200px;
       height: 3px;
-      background: #ddd;
+      background: #000000;
       border: none;
       border-radius: 3px;
   }
@@ -255,7 +261,7 @@
       height: 16px;
       width: 16px;
       border-radius: 50%;
-      background: #f8d990;
+      background: #000000;
       margin-top: -6px;
   }
   
@@ -268,10 +274,10 @@
   }
   
   input[type=range]{
-      /* fix for FF unable to apply focus style bug  */
+      
       border: 1px solid white;
   
-      /*required for proper track sizing in FF*/
+      
       width: 200px;
   }
   
@@ -291,7 +297,7 @@
       background: #f8d990;
   }
   
-  /*hide the outline behind the border*/
+ 
   input[type=range]:-moz-focusring{
       outline: 1px solid white;
       outline-offset: -1px;
@@ -301,17 +307,38 @@
       background: #ccc;
   }
   
-  /**********************
-  QUESTIONS : SUBMIT
-  **********************/
-  .finalSubmit{
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
+  .slider-labels {
+    display: flex;
+    justify-content: space-between; 
+    position: relative;
+    top: 0px;
+    
+  }
+  .introvert-label {
+    margin-left: 70px;
+    background-color: #000000; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    color: #bfb7b7; 
+    z-index: 1;
   }
   
-  .submit{
-    
+  .extrovert-label {
+    margin-right: 70px;
+    background-color: #000000; 
+    color: #bfb7b7; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    z-index: 1;
+  }
+  .finalSubmit{
+    position: relative;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 350px;
+  }
+  
+  .submit {
     width: 120px;
     height: 50px;
     text-align: center;
@@ -319,11 +346,12 @@
     border: none;
     font-size: 1em;
     outline: none;
-    color: rgb(0, 0, 0);
-    background: #e45170;
+    color: #fff; /* White text color */
+    background: #000 !important;; /* Black background color */
     transition: transform .2s, background-color .2s, box-shadow .1s;
-    box-shadow: 5px 5px 5px #bf445e;
-  }
+    box-shadow: 5px 5px 5px #1b9d60;
+}
+
   .submit:hover{
     transform: scale(.95);
   }
@@ -335,47 +363,68 @@
   /********************
   RESULT
   *********************/
-  .resultArrow{
-     margin-bottom: 200px; 
+
+  .resultSection{
+    position: relative;
+    bottom: 30px;
   }
-  .divTest{
-    background: pink;
-    text-align: center;
-    margin: 0 auto;
+  
+  .result{
+    position: absolute;
+    height: 100vh;
   }
+ 
+  
   #resArrow{
     position: relative;
     animation: bounce .8s infinite ease-in;
   }
   .resultTitle{
-    margin-top: 80px;
     font-family: 'Lily Script One', cursive;
-    font-size: 4em;
+    font-size: 30px;
     text-align: center;
     color: #002c60;
   }
   
-  .resultText{
+  .resultText {
     width: 70%;
     margin: 0 auto;
     font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: 20px;
     font-size: 1em;
+    text-align: center; /* Center-align the text */
   }
-  .animalPic{
-    width: 500px;
-  }
-  .resultAnimal{
-    font-family: 'Caveat Brush', cursive;
-    font-size: 5em;
-    border: 10px solid #e45170 ;
-    width: 90%;
-    margin: 0 auto;
+  
+  .animalPic {
+    max-width: 50%; /* Ensure the image stays within its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any residual inline layout */
+    margin: 0 auto; 
     margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    padding: 1px 0;
-    color: #e45170;
+    border: 5px solid #ffffff; /* Add a border around the circular image */
+    border-radius: 50%; /* Make the image circular by setting border-radius to 50% */
+    overflow: hidden; /* Hide any content that exceeds the circular boundary */
+    transition: transform 0.3s ease; /* Add a smooth transformation effect */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
   }
+  
+  .animalPic:hover {
+    transform: scale(1.1); /* Enlarge the circular image slightly on hover */
+    filter: brightness(1.2); /* Increase brightness on hover */
+  }
+  
+  
+  .resultAnimal {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 3em;
+    width: auto; /* Allow the text width to adjust to content */
+    margin: 20px auto; /* Center the text and add margin */
+    text-align: center; /* Center-align the text */
+    color: #3f4a45;
+    border: none; /* Remove the border */
+  }
+  
     
   /****************
   MEDIA QUERY
@@ -390,7 +439,6 @@
     }
     
     input[type=range]{
-      /*required for proper track sizing in FF*/
       width: 150px;
   }
   }
@@ -405,7 +453,6 @@
     }
     
     input[type=range]{
-      /*required for proper track sizing in FF*/
       width: 130px;
   }
     
@@ -452,14 +499,6 @@
   
   }
   }
-  .slider-labels {
-    display: flex;
-    justify-content: space-between; /* This will place Introvert on the left and Extrovert on the right */
-    margin-top: 0px; /* Adjust the margin as needed */
-    
-  }
-  .result{
-    position: relative;
-    top: 500px;
-  }
+  
+  
   
