@@ -4,6 +4,13 @@
   font-family: 'Open Sans', sans-serif;
   font-family: 'Lily Script One', cursive;
 ******************/
+/******************
+  FONT REF:
+  font-family: 'Caveat Brush', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lily Script One', cursive;
+******************/
+
 
 
 *{
@@ -38,13 +45,19 @@
   .arrowDiv{
     text-align: center;
   }
-/*
+
   .questions{
     position:relative;
-    top: 500px;/* Adjust the margin as needed 
+    top: 500px;
 }
   
-  
+  #maincolour{
+    top: 900px;
+    
+    position: relative;
+
+  }
+  /*
   .title{
     font-family: 'Caveat Brush', cursive;
     font-size: 1.6em;
@@ -54,17 +67,13 @@
     padding: 1px 0;
     color: white;
   }
-************/
-  /******************
-  QUESTIONS : COLOR
-  ******************/
+
   .colorTitle.title h1 {
-    font-size: 24px; /* Adjust the font size to your preference */
-    color: #333; /* Set the text color to your preference */
-    margin: 0; /* Remove any default margin */
+    font-size: 24px;
+    color: #333; 
+    margin: 0; 
     padding: 10px;
-    font-weight: bold; /* Add padding as needed */
-    /* Add any other styles you want */
+    font-weight: bold; 
   }
   .colorSection {
     margin: 0 auto;
@@ -73,53 +82,65 @@
     
     position: relative;
   }
-  .colorSelection {
+  #colorSelection {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top: 102px;
-    left: 38px;
+    top: 200px;
   }
-  
+  */
   .colorBlockSelection {
     position: relative;
     display: inline-block;
-    margin-top: 50px;
-    margin-right: 59px;
-    margin-left: 17px;
+    left: 50px;
+    margin-bottom: 30px;
     width: 110px;
     height: 110px;
-    border: 2px solid transparent; /* Add a border to show selection */
-    cursor: pointer; /* Add pointer cursor for better UX */
+    border: 2px solid transparent; 
+    cursor: pointer; 
   }
-  
-  .colorBlockSelection p {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bolder;
-    margin-top: 5px; /* Adjust as needed */
+  .colorBlockSelection.red {
+    position: relative;
+    left: 45px;
+  }
+  .colorBlockSelection.purple {
+    position: relative;
+    left: 45px;
+  }
+  .colorBlockSelection.blue {
+    position: relative;
+    left: 70px;
+  }
+  .colorBlockSelection.yellow {
+    position: relative;
+    left: 70px;
+  }
+  .colorBlockSelection.green {
+    position: relative;
+    left: 95px;
+  }
+  .colorBlockSelection.orange {
+    position: relative;
+    left: 95px;
   }
   .radio-custom {
     position: absolute;
     left: 0;
     top: 0;
-    height: 20px; /* Adjust this value to your preference */
-    width: 20px; /* Adjust this value to your preference */
-    border: 2px solid #000; /* Style the custom radio button */
+    height: 20px; 
+    width: 20px; 
+    border: 2px solid #000; 
     border-radius: 50%;
-    background-color: transparent; /* Make it round */
+    background-color: transparent; 
   }
-
+  
   .colorBlockSelection input:checked + .radio-custom {
-    background-color: #000; /* Change the background color when checked */
+    background-color: #000; 
   }
   .colorBlockSelection input:checked + .radio-custom ~ p {
-    color: #fff; /* Change text color to white */
+    color: #000000; 
   }
    
-  /**********************
-  QUESTIONS : FREE TIME
-  **********************/
 
   .timeSection{
     position: relative;
@@ -133,8 +154,7 @@
     color: #333;
     margin: 30px;
     padding: 30px;
-    font-weight: bold; /* Add this line to make the text bold */
-    /* Add any other styles you want */
+    font-weight: bold; 
   }
   
   
@@ -155,24 +175,22 @@
   }
 
 
-  /* Style for the checkbox input */
 .timeOption input[type="checkbox"] {
-  display: none; /* Hide the default checkbox input */
+  display: none; 
 }
 
-/* Style for the custom checkbox */
+
 .timeOption .custom-checkbox {
   position: relative;
   display: inline-block;
   width: 20px;
   height: 20px;
   
-  border: 2px solid #333; /* Border style for the checkbox */
-  border-radius: 70%; /* Make it round */
+  border: 2px solid #333; 
+  border-radius: 70%; 
   cursor: pointer;
 }
 
-/* Style for the checked custom checkbox */
 .timeOption input[type="checkbox"]:checked + .custom-checkbox::after {
   content: "";
   position: absolute;
@@ -181,25 +199,23 @@
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  background-color: #333; /* Color when checked */
-  border-radius: 50%; /* Make the checkmark round */
+  background-color: #333; 
+  border-radius: 50%; 
   display: block;
 }
 
-/* Style for the checked custom round checkbox */
+
 .timeOption input[type="checkbox"]:checked + .custom-checkbox::before {
   content: ""; 
-  content: "\2713"; /* Unicode checkmark character */
+  content: "\2713"; 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px; /* Adjust the font size as needed */
-  color: #333; /* Color when checked */
+  font-size: 16px; 
+  color: #333; 
 }
-  /**********************
-  QUESTIONS : PERSONALITY
-  **********************/
+  
   
   .personalitySection{
     position: relative;
@@ -241,6 +257,8 @@
     position: relative;
     left: -22px;
   }
+
+  
   
   input[type="range"] {
     -webkit-appearance: none;
@@ -422,13 +440,10 @@
     margin: 20px auto; /* Center the text and add margin */
     text-align: center; /* Center-align the text */
     color: #3f4a45;
-    border: none; /* Remove the border */
+    border: none; 
   }
   
-    
-  /****************
-  MEDIA QUERY
-  *****************/
+  
   @media only screen and (max-width: 450px){
     input[type=range]::-webkit-slider-runnable-track {
       width: 150px;
@@ -456,8 +471,8 @@
       width: 130px;
   }
     
-    .personalityOption label{
-    font-size: .9em;
+    .personalityTitle{
+    font-size: .1em;
   }
     .headerTitle {
       font-size: 3.5em;
@@ -479,7 +494,6 @@
     }
     
     input[type=range]{
-      /*required for proper track sizing in FF*/
       width: 100px;
   }
     
