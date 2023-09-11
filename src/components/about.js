@@ -7,10 +7,10 @@ const About = () => {
     <div className="min-h-screen bg-cover bg-center relative flex flex-col justify-center items-center" style={{ backgroundImage: `url(${image})` }}>
       <div className="text-green-600 text-4xl text-center font-semibold pb-8">About Us</div>
 
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 text-gray-700 text-lg text-center">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-5 text-gray-700 text-lg text-center">
         <Card>
           <Card.Body>
-            <p className="mb-6">
+            <p className="mb-5">
               At WildPatron, we are passionate about protecting and preserving our planet's incredible biodiversity. Our mission is to create a platform that empowers individuals and organizations to take a proactive role in safeguarding wild animals.
             </p>
             <p>

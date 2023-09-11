@@ -1,197 +1,42 @@
-/******************
-  FONT REF:
-  font-family: 'Caveat Brush', cursive;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Lily Script One', cursive;
-******************/
-/******************
-  FONT REF:
-  font-family: 'Caveat Brush', cursive;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Lily Script One', cursive;
-******************/
-
-
-
-*{
-    box-sizing: border-box;
-  }
-  
-  img{
-    max-width: 100%;
-  }
-  body{
-    font-family: 'Open Sans', sans-serif;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  
-  .quizdiv{
-    position: relative;
-    top: 950px;
-    min-height: 100vh;
-    height: 3200px;
-  }
-  .header{
-    position: relative;
-    height: 100vh;
-  }
-  #arrow{
-    position: relative;
-    animation: bounce .8s infinite ease-in;
-    margin-left: 60%;
-  }
-  
-  .arrowDiv{
-    text-align: center;
-  }
-
-  .questions{
-    position:relative;
-    top: 500px;
-}
-  
-  #maincolour{
-    top: 900px;
-    
-    position: relative;
-
-  }
-  /*
-  .title{
-    font-family: 'Caveat Brush', cursive;
-    font-size: 1.6em;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 1px 0;
-    color: white;
-  }
-
-  .colorTitle.title h1 {
-    font-size: 24px;
-    color: #333; 
-    margin: 0; 
-    padding: 10px;
-    font-weight: bold; 
-  }
-  .colorSection {
-    margin: 0 auto;
-    text-align: center;
-    top: 900px;
-    
-    position: relative;
-  }
-  #colorSelection {
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: 200px;
-  }
-  */
-  .colorBlockSelection {
-    position: relative;
-    display: inline-block;
-    left: 50px;
-    margin-bottom: 30px;
-    width: 110px;
-    height: 110px;
-    border: 2px solid transparent; 
-    cursor: pointer; 
-  }
-  .colorBlockSelection.red {
-    position: relative;
-    left: 45px;
-  }
-  .colorBlockSelection.purple {
-    position: relative;
-    left: 45px;
-  }
-  .colorBlockSelection.blue {
-    position: relative;
-    left: 70px;
-  }
-  .colorBlockSelection.yellow {
-    position: relative;
-    left: 70px;
-  }
-  .colorBlockSelection.green {
-    position: relative;
-    left: 95px;
-  }
-  .colorBlockSelection.orange {
-    position: relative;
-    left: 95px;
-  }
-  .radio-custom {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 20px; 
-    width: 20px; 
-    border: 2px solid #000; 
-    border-radius: 50%;
-    background-color: transparent; 
-  }
-  
-  .colorBlockSelection input:checked + .radio-custom {
-    background-color: #000; 
-  }
-  .colorBlockSelection input:checked + .radio-custom ~ p {
-    color: #000000; 
-  }
-   
-
-  .timeSection{
-    position: relative;
-    height: 100vh;
-    left: 100px;
-    top: 1080px;
-  }
-  
-  .timeTitle.title h1 {
-    font-size: 24px;
-    color: #333;
-    margin: 30px;
-    padding: 30px;
-    font-weight: bold; 
-  }
-  
-  
-  .timeSelection{
-    margin: 0 auto;
-    text-align: left;
-    margin-left: 25%;
-    
-  }
-  
-  .timeOption {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    
-  }
-
-
-.timeOption input[type="checkbox"] {
-  display: none; 
+.colorBlockSelection {
+  position: relative;
+  display: inline-block;
+  left: 64px;
+  margin-bottom: 30px;
+  width: 110px;
+  height: 110px;
+  border: 2px solid transparent; 
+  cursor: pointer; 
 }
 
+.radio-custom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20px; 
+  width: 20px; 
+  border: 2px solid #000; 
+  border-radius: 50%;
+  background-color: transparent; 
+}
 
-.timeOption .custom-checkbox {
+.colorBlockSelection input:checked + .radio-custom {
+  background-color: #000; 
+}
+.colorBlockSelection input:checked + .radio-custom ~ p {
+  color: #000000; 
+}
+ 
+
+.timeOption .hidden {
   position: relative;
   display: inline-block;
   width: 20px;
   height: 20px;
-  
-  border: 2px solid #333; 
-  border-radius: 70%; 
   cursor: pointer;
 }
 
-.timeOption input[type="checkbox"]:checked + .custom-checkbox::after {
+.timeOption input[type="checkbox"]:checked + .radio-custom::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -200,12 +45,11 @@
   width: 10px;
   height: 10px;
   background-color: #333; 
-  border-radius: 50%; 
+  border-radius: 70%; 
   display: block;
 }
 
-
-.timeOption input[type="checkbox"]:checked + .custom-checkbox::before {
+.timeOption input[type="checkbox"]:checked + .radio-custom::before {
   content: ""; 
   content: "\2713"; 
   position: absolute;
@@ -215,304 +59,3 @@
   font-size: 16px; 
   color: #333; 
 }
-  
-  
-  .personalitySection{
-    position: relative;
-    height: 100vh;
-    top: 800px;
-    right: 75px;
-  }
-  .personalityTitle{
-    font-size: 24px; 
-    color: #333; 
-    margin: 0; 
-    padding: 10px;
-    font-weight: bold; 
-  }
-  
-  .personalitySelection{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .personalityOption{
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  .personalityOption label{
-    font-size: 1em;
-    font-weight: bolder;
-  }
-  
-  .one{
-    position: relative;
-    left: -10px;
-  }
-  
-  .three{
-    position: relative;
-    left: -22px;
-  }
-
-  
-  
-  input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none; 
-  }
-  
-  input[type=range]::-webkit-slider-runnable-track {
-      width: 200px;
-      height: 3px;
-      background: #000000;
-      border: none;
-      border-radius: 3px;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: none;
-      height: 16px;
-      width: 16px;
-      border-radius: 50%;
-      background: #000000;
-      margin-top: -6px;
-  }
-  
-  input[type=range]:focus {
-      outline: none;
-  }
-  
-  input[type=range]:focus::-webkit-slider-runnable-track {
-      background: #ccc;
-  }
-  
-  input[type=range]{
-      
-      border: 1px solid white;
-  
-      
-      width: 200px;
-  }
-  
-  input[type=range]::-moz-range-track {
-      width: 200px;
-      height: 5px;
-      background: #ddd;
-      border: none;
-      border-radius: 3px;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-      border: none;
-      height: 16px;
-      width: 16px;
-      border-radius: 50%;
-      background: #f8d990;
-  }
-  
- 
-  input[type=range]:-moz-focusring{
-      outline: 1px solid white;
-      outline-offset: -1px;
-  }
-  
-  input[type=range]:focus::-moz-range-track {
-      background: #ccc;
-  }
-  
-  .slider-labels {
-    display: flex;
-    justify-content: space-between; 
-    position: relative;
-    top: 0px;
-    
-  }
-  .introvert-label {
-    margin-left: 70px;
-    background-color: #000000; 
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    color: #bfb7b7; 
-    z-index: 1;
-  }
-  
-  .extrovert-label {
-    margin-right: 70px;
-    background-color: #000000; 
-    color: #bfb7b7; 
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    z-index: 1;
-  }
-  .finalSubmit{
-    position: relative;
-    text-align: center;
-    margin-bottom: 80px;
-    margin-top: 350px;
-  }
-  
-  .submit {
-    width: 120px;
-    height: 50px;
-    text-align: center;
-    border-radius: 30px;
-    border: none;
-    font-size: 1em;
-    outline: none;
-    color: #fff; /* White text color */
-    background: #000 !important;; /* Black background color */
-    transition: transform .2s, background-color .2s, box-shadow .1s;
-    box-shadow: 5px 5px 5px #1b9d60;
-}
-
-  .submit:hover{
-    transform: scale(.95);
-  }
-  
-  .submit:active{
-    transform: scale(.9);
-  }
-  
-  /********************
-  RESULT
-  *********************/
-
-  .resultSection{
-    position: relative;
-    bottom: 30px;
-  }
-  
-  .result{
-    position: absolute;
-    height: 100vh;
-  }
- 
-  
-  #resArrow{
-    position: relative;
-    animation: bounce .8s infinite ease-in;
-  }
-  .resultTitle{
-    font-family: 'Lily Script One', cursive;
-    font-size: 30px;
-    text-align: center;
-    color: #002c60;
-  }
-  
-  .resultText {
-    width: 70%;
-    margin: 0 auto;
-    font-weight: bolder;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 1em;
-    text-align: center; /* Center-align the text */
-  }
-  
-  .animalPic {
-    max-width: 50%; /* Ensure the image stays within its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any residual inline layout */
-    margin: 0 auto; 
-    margin-top: 30px;
-    border: 5px solid #ffffff; /* Add a border around the circular image */
-    border-radius: 50%; /* Make the image circular by setting border-radius to 50% */
-    overflow: hidden; /* Hide any content that exceeds the circular boundary */
-    transition: transform 0.3s ease; /* Add a smooth transformation effect */
-    cursor: pointer; /* Change the cursor to a pointer on hover */
-  }
-  
-  .animalPic:hover {
-    transform: scale(1.1); /* Enlarge the circular image slightly on hover */
-    filter: brightness(1.2); /* Increase brightness on hover */
-  }
-  
-  
-  .resultAnimal {
-    font-family: 'Caveat Brush', cursive;
-    font-size: 3em;
-    width: auto; /* Allow the text width to adjust to content */
-    margin: 20px auto; /* Center the text and add margin */
-    text-align: center; /* Center-align the text */
-    color: #3f4a45;
-    border: none; 
-  }
-  
-  
-  @media only screen and (max-width: 450px){
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 150px;
-    }
-    
-    input[type=range]::-moz-range-track {
-      width: 150px;
-    }
-    
-    input[type=range]{
-      width: 150px;
-  }
-  }
-  
-  @media only screen and (max-width: 400px){
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 130px;
-    }
-    
-    input[type=range]::-moz-range-track {
-      width: 130px;
-    }
-    
-    input[type=range]{
-      width: 130px;
-  }
-    
-    .personalityTitle{
-    font-size: .1em;
-  }
-    .headerTitle {
-      font-size: 3.5em;
-    }
-    
-    .title{
-  
-    width: 80%;
-  }
-  }
-  
-  @media only screen and (max-width: 350px){
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 100px;
-    }
-    
-    input[type=range]::-moz-range-track {
-      width: 100px;
-    }
-    
-    input[type=range]{
-      width: 100px;
-  }
-    
-    .personalityOption label{
-    font-size: .9em;
-  }
-    
-    .colorBlockSelection{
-    margin-top: 15px;
-  }
-      .headerTitle {
-      font-size: 3.5em;
-    }
-    
-    .timeSelection{
-    margin-left: 20%;
-  
-  }
-  }
-  
-  
-  

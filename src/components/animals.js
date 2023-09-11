@@ -4,10 +4,11 @@ import Card from 'react-bootstrap/Card';
 import { donate } from "./SupportTokenWrapper";
 import image from "../images/22.jpeg";
 
-const CharityCard = ({
+const AnimalCard = ({
   imageSrc,
   name,
   description,
+  organisation,
   address,
   onDonate,
 }) => {
@@ -21,12 +22,13 @@ const CharityCard = ({
 
   return (
     
-    <div className="charity-card bg-black hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"   >
+    <div className="animal-card bg-black hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"   >
       <Card className="bg-black  text-white" >
         <Card.Img variant="top" src={imageSrc} />
         <Card.Body>
           <Card.Title className="text-green-500 text-2xl font-semibold">{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
+          <Card.Text>{organisation}</Card.Text>
           <Card.Text className="text-orange-500">Wallet Address: 
           </Card.Text>
           <Card.Text className="text-orange-300"> 
@@ -60,22 +62,24 @@ const CharityCard = ({
   );
 };
 
-const charities = [
+const animals = [
   {
     name: "Leo",
-    description: "Lion - aged 5 years",
+    description: "Lion - aged 5 years ",
+    organisation: "WildHome id : 147",
     address: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
     imageSrc: "https://images.pexels.com/photos/12004890/pexels-photo-12004890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     name: "Eliie",
     description: "Elephant - aged 10 years",
+    organisation: "WildHome id : 147",
     address: "0xee6E56276328b33C6250db0252125A8BaD0E38DE",
     imageSrc: "https://images.pexels.com/photos/982021/pexels-photo-982021.jpeg?auto=compress&cs=tinysrgb&w=600",
   }
 ];
 
-const Charities = () => {
+const Animals = () => {
   const [donated, setDonated] = useState(false);
   const [connected, setConnected] = useState(false);
 
@@ -115,10 +119,10 @@ const Charities = () => {
         >
           Connect to MetaMask
         </button>
-        <div className="charity-card container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4" style={{position: "relative", left: '25%'}}>
-        {charities.map((charity, index) => (
+        <div className="animal-card container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4" style={{position: "relative", left: '25%'}}>
+        {animals.map((animal, index) => (
           <div key={index} className="w-full px-4 mb-8" >
-            <CharityCard {...charity} onDonate={handleDonate} />
+            <AnimalCard {...animal} onDonate={handleDonate} />
           </div>
         ))}
       </div>
@@ -127,4 +131,4 @@ const Charities = () => {
   );
 };
 
-export default Charities;
+export default Animals;

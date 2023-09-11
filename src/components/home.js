@@ -24,9 +24,9 @@ const WaitlistSignup = () => {
       </button>
     </Container>
   </div>
-  <div className="w-1/2 relative relative overflow-y-auto" style = {{  backgroundPosition: 'center', backgroundSize: 'cover',backgroundAttachment: 'scroll', backgroundRepeat: 'no-repeat'}} >
-    <Container className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-0 ">
-    <Quiz></Quiz>
+  <div className="w-1/2 relative relative overflow-y-auto bg-gray-200" style={{ backgroundPosition: 'center', backgroundSize: 'cover', backgroundAttachment: 'scroll', backgroundRepeat: 'no-repeat' }}>
+    <Container className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-0 text-white">
+      <Quiz></Quiz>
     </Container>
   </div>
 </div>

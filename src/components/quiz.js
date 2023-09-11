@@ -1,63 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import image from "../images/22.jpeg";
+import first from "../images/first.jpeg";
 import news from "../images/final2.JPG";
 import colour from "../images/colour.jpeg";
 import monkey from "../images/monkey.jpeg";
 import './quiz.css';
 
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    Typography,
-    Avatar,
-} from "@material-tailwind/react";
-
 const Quiz = () => {
     const [ans, setAns] = useState(0);
     const [color, setColor] = useState('');
     const [result, setResult] = useState('');
-    const [freeTimeActivities, setFreeTimeActivities] = useState([]); // State to store selected activities
+    const [freeTimeActivities, setFreeTimeActivities] = useState([]); 
     const [personalityValue, setPersonalityValue] = useState(10);
+    const [showResult, setShowResult] = useState(false);
 
 
-    const handleColorClick = (colorValue) => { // Handle color click logic here
+    const handleColorClick = (colorValue) => { 
         setColor(colorValue);
     };
 
-    const handleButtonClick = () => {
-        // Handle button click logic here
-        // For example, you can show the result based on 'ans' state
-        if (ans === 0) {
-            alert("Please select a color before submitting.");
-        } else {
-            // Perform any necessary actions based on the user's selections and 'ans' state
-            // You can display the result, navigate to a new page, or make an API call here
-            // For now, let's just display the result in an alert
-            alert(`You selected color value: ${ans}`);
-        }
-    };
-    const handleFreeTimeCheckbox = (activity) => { // Clone the current list of selected activities
+   
+    const handleFreeTimeCheckbox = (activity) => { 
         const updatedActivities = [...freeTimeActivities];
 
         // Check if the activity is already selected
         const index = updatedActivities.indexOf(activity);
 
-        if (index === -1) { // Activity is not selected, add it to the list
+        if (index === -1) {
             updatedActivities.push(activity);
-        } else { // Activity is already selected, remove it from the list
+        } else {
             updatedActivities.splice(index, 1);
         }
 
-        // Update the state with the updated list of selected activities
         setFreeTimeActivities(updatedActivities);
     };
 
     const handleSubmit = () => {
         // Calculate the result based on color and free time activities
-        // You can add more logic for other quiz questions here
-
-        // For demonstration purposes, let's assume a simple scoring system based on selected activities
+        setShowResult(true);
         const activityScores = {
             'jog': 10,
             'catchUp': 8,
@@ -66,12 +45,10 @@ const Quiz = () => {
             'nap': 0
         };
 
-        // Calculate the total score for selected activities
         const activityScore = freeTimeActivities.reduce((totalScore, activity) => {
             return totalScore + activityScores[activity];
         }, 0);
 
-        // Calculate the final result
         setAns(color ? activityScore + parseInt(color) + personalityValue : activityScore);
         console.log("new " + ans);
         const animalData = determineAnimal(ans);
@@ -79,26 +56,21 @@ const Quiz = () => {
         // Display the result (similar to previous code)
         // ...
         setResult(
-            <div className="resultSection">
-                <h1 className="resultTitle">Result</h1>
-                <section className="resultText">
-                    <p>After crunching the numbers, you are a...</p>
-                    <img className="animalPic"
-                        src={
-                            animalData.imageSrc
-                        }
-                        alt={
-                            animalData.imageSrc
-                        } />
-                    <h1 className="resultAnimal">
-                        {
-                            animalData.animal
-                        }</h1>
-                    <p> {
-                        animalData.description
-                    } </p>
-                </section>
-            </div>
+            <div className="flex flex-col items-center justify-center h-screen">
+    <h1 className="text-2xl font-bold mb-4 text-black">Result</h1>
+    <section className="text-center text-black">
+      <p>After crunching the numbers, you are a...</p>
+      <div className="w-32 h-32 rounded-full overflow-hidden mt-4 left-195">
+        <img
+          className="w-full h-full object-cover"
+          src={animalData.imageSrc}
+          alt={animalData.imageSrc}
+        />
+      </div>
+      <h1 className="text-xl  text-black font-bold mt-4">{animalData.animal}</h1>
+      <p className="mt-2 text-black">{animalData.description}</p>
+    </section>
+  </div>
         );
     };
     const determineAnimal = (ans) => {
@@ -121,36 +93,21 @@ const Quiz = () => {
     };
 
 
-    return (< div className='quizdiv' > <div>
-        <header id="topHeader">
-            <div className="arrowDiv">
-                <a href="#colorSection">
-                    <svg width="100" height="180" xmlns="http://www.w3.org/2000/svg">
-                        <g id="arrow">
-                            <title>Downward Arrow</title>
-                            <line stroke="#000000" transform="rotate(-0.14894883334636688 28.93478393554643,25.999999999999236)" id="svg_1" y2="34" x2="37.43478" y1="18" x1="20.43478" strokeWidth="5" fill="none" />
-                            <line stroke="#000000" id="svg_3" y2="17.09239" x2="49.875" y1="33.03261" x1="34.80978" strokeWidth="5" fill="none" />
-                        </g>
-                    </svg>
-                </a>
-            </div>
-        </header>
-    </div>
-
-
-        <div>
-
-        <article className="bg-gray-100 p-4" id="colorSection">
-    <div
-        className="bg-cover bg-center relative p-8"
+    return (
+    < div className='quizdiv relative p-8 absolute inset-0 top-45 flex items-center justify-center '> 
+    <div>
+    <article >
+        <div
+        className="w-full h-auto bg-contain bg-no-repeat bg-center relative p-8 absolute inset-0 top-44 flex items-center justify-center"
+        style={{ backgroundImage: `url(${first})`, minHeight: '100vh'}}
+        ></div>
+</article>
+        <article  id="colorSection">
+        <div
+        className="w-full h-auto bg-contain bg-no-repeat bg-center relative p-8 absolute inset-0 top-44"
         id='maincolour'
         style={{ backgroundImage: `url(${colour})`, minHeight: '100vh'}}
-    >
-        <div className="text-center" style={{position: 'relative', top:'80px'}}>
-            <h1 className="text-2xl font-bold text-gray-800">
-                What is your favorite color?
-            </h1>
-        </div>
+        >
         <div className="mt-12 flex flex-wrap justify-center items-center space-x-1" style={{position: 'relative', top: '145px'}}>
             <div className="space-x-4">
                 <label className="colorBlockSelection red">
@@ -232,135 +189,138 @@ const Quiz = () => {
     </div>
 </article>
 
-<article className="mt-20 mx-auto px-4 lg:pl-1/4" id="timeSection" >
-  
-    <div
-      className="bg-cover bg-center relative p-8"
-      style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh',position: 'relative', top: '795px'}}  
-    >
 
-    <div className="mt-12 m-12 text-center" >
-      <h1 className="text-2xl font-bold text-gray-700">What do you like to do in your free time?</h1>
-    </div>
-    
-    <div className="mx-12 mt-12 text-left">
-      <form action="index.html" method="post">
-        <label className="mb-4 lg:inline-block mr-4 font-bold cursor-pointer">
-          <input
-            type="checkbox"
-            id="jog"
-            name="time"
-            value="jog"
-            onChange={() => handleFreeTimeCheckbox('jog')}
-            className="hidden"
-          />
-          <span className="inline-block w-4 h-4 border-2 border-gray-700 rounded-full cursor-pointer mr-2"></span>
-          <span className="text-gray-700 cursor-pointer">A jog in the park</span>
-
-        </label>
-      
-        <label className="mb-4 lg:inline-block mr-4 font-bold cursor-pointer">
-          <input
-            type="checkbox"
-            id="catchUp"
-            name="time"
-            value="catchUp"
-            onChange={() => handleFreeTimeCheckbox('catchUp')}
-            className="hidden"
-          />
-          <span className="inline-block w-4 h-4 border-2 border-gray-700 rounded-full cursor-pointer mr-2"></span>
-          <span className="text-gray-700 cursor-pointer">Catching up with friends</span>
-
-        </label>
-        
-        <label className="mb-6 lg:inline-block mr-20 font-bold cursor-pointer">
-          <input
-            type="checkbox"
-            id="art"
-            name="time"
-            value="art"
-            onChange={() => handleFreeTimeCheckbox('art')}
-            className="hidden"
-          />
-          <span className="inline-block w-4 h-4 border-2 border-gray-700 rounded-full cursor-pointer mr-2"></span>
-          <span className="text-gray-700 cursor-pointer">Creating art</span>
-
-        </label>
-
-        <label className="mb-4 lg:inline-block mr-20 font-bold cursor-pointer">
-          <input
-            type="checkbox"
-            id="skill"
-            name="time"
-            value="skill"
-            onChange={() => handleFreeTimeCheckbox('skill')}
-            className="hidden"
-          />
-          <span className="inline-block w-4 h-4 border-2 border-gray-700 rounded-full cursor-pointer mr-2"></span>
-          <span className="text-gray-700 cursor-pointer">Learning a new skill</span>
-
-        </label>
-
-        <label className="mb-4 lg:inline-block mr-20 font-bold cursor-pointer">
-          <input
-            type="checkbox"
-            id="nap"
-            name="time"
-            value="nap"
-            onChange={() => handleFreeTimeCheckbox('nap')}
-            className="hidden"
-          />
-          <span className="inline-block w-4 h-4 border-2 border-gray-700 rounded-full cursor-pointer mr-2"></span>
-          <span className="text-gray-700 cursor-pointer">Taking a nap</span>
-
-        </label>
-      </form>
-    </div>
-  </div>
-</article>
-
-<article className="mt-20 mx-auto px-4 lg:pl-1/4 relative">
-  {/* Background Image */}
+<article className="mt-64 lg:mt-5 mx-auto lg: relative">
   <div
-    className="absolute inset-0 h-full w-full  bg-cover bg-center"
-    style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh',position: 'relative', top: '695px'}}
+    className="w-full h-auto bg-contain bg-no-repeat bg-center relative p-0 text-center"
+    style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh', lg: { top: '10vh', marginTop: '0' } }}
   >
-
-<div className="mt-12 text-center" >
-      <h1 className="text-2xl font-bold text-gray-700">What do you like to do in your free time?</h1>
+    <div className="absolute inset-0 flex top-52 left-28">
+      <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-700">What do you like to do in your free time?</h1>
     </div>
 
-  <div className="mx-auto mt-48 text-center">
-    <form action="index.html" method="post">
+
+    <div className="text-center absolute inset-0 top-300">
+  <form action="index.html" method="post" className="space-y-4">
+    <label className="block text-base lg:text-lg timeOption">
       <input
-        type="range"
-        min="0"
-        max="20"
-        value={personalityValue}
-        onChange={handlePersonalityChange}
-        className="w-full"
+        type="checkbox"
+        id="jog"
+        name="time"
+        value="jog"
+        onChange={() => handleFreeTimeCheckbox('jog')}
+        className="hidden"
       />
+      <span className="radio2"></span>
+      <span className="text-gray-700 cursor-pointer ml-2">A jog in the park</span>
+    </label>
 
-      <div className="flex justify-between mt-2">
-        <p className="introvert-label bg-black text-white p-2 rounded-lg">Introvert</p>
-        <p className="extrovert-label bg-black text-white p-2 rounded-lg">Extrovert</p>
-      </div>
-    </form>
-  </div>
+    <label className="block text-base lg:text-lg timeOption">
+      <input
+        type="checkbox"
+        id="catchUp"
+        name="time"
+        value="catchUp"
+        onChange={() => handleFreeTimeCheckbox('catchUp')}
+        className="hidden"
+      />
+      <span className="text-gray-700 cursor-pointer ml-2">Catching up with friends</span>
+    </label>
 
-  <div className="text-center mt-8">
-    <a href="#resArrow">
-      <button className="submit">Submit</button>
-    </a>
-  </div>
-  </div>
+    <label className="block text-base lg:text-lg timeOption">
+      <input
+        type="checkbox"
+        id="art"
+        name="time"
+        value="art"
+        onChange={() => handleFreeTimeCheckbox('art')}
+        className="hidden"
+      />
+      <span className="text-gray-700 cursor-pointer ml-2">Creating art</span>
+    </label>
+
+    <label className="block text-base lg:text-lg timeOption">
+      <input
+        type="checkbox"
+        id="skill"
+        name="time"
+        value="skill"
+        onChange={() => handleFreeTimeCheckbox('skill')}
+        className="hidden"
+      />
+      <span className="text-gray-700 cursor-pointer ml-2">Learning a new skill</span>
+    </label>
+
+    <label className="block text-base lg:text-lg timeOption">
+      <input
+        type="checkbox"
+        id="nap"
+        name="time"
+        value="nap"
+        onChange={() => handleFreeTimeCheckbox('nap')}
+        className="hidden"
+      />
+      <span className="text-gray-700 cursor-pointer ml-2">Taking a nap</span>
+    </label>
+  </form>
+
+    </div>
+    </div>
 </article>
 
 
-            <div className="result ">
-                {result} </div>
-        </div>
+
+<article className="mt-0 lg:mt-20 mx-auto lg:relative">
+  <div
+    className="absolute inset-0 w-full h-auto bg-contain top-9 mt-0 bg-no-repeat bg-center"
+    style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh' }}
+  >
+    <div className="absolute inset-0 flex top-44 left-44">
+      <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-700">What is your personality ?</h1>
     </div>
+
+<div className="text-center absolute inset-0 top-300 h-8">
+  <form action="index.html" method="post">
+    <input
+      type="range"
+      min="0"
+      max="20"
+      value={personalityValue}
+      onChange={handlePersonalityChange}
+      className="w-100"
+      style={{ maxWidth: '400px' }}
+    />
+
+    <div className="flex justify-between mt-2">
+    <p className="introvert-label bg-black text-white p-2 rounded-lg ml-14">Introvert</p>
+    <p className="extrovert-label bg-black text-white p-2 rounded-lg mr-14">Extrovert</p>
+    </div>
+  </form>
+
+<div className="text-center mt-12">
+  <a href="#resArrow">
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleSubmit}>
+      Submit
+    </button>
+  </a>
+</div>
+</div>
+</div>
+</article>
+{showResult && (
+<article className="mt-40 lg:mt-40 mx-auto lg:relative">
+  <div
+    className="absolute inset-0 w-full h-auto bg-contain top-9 mt-0 bg-no-repeat bg-center"
+    style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh' }}
+  >
+  <div className="result ">
+    {result}
+  </div></div>
+</article>)}
+
+</div>
+</div>
+
     );
 }
 
