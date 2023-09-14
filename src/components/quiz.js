@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import first from "../images/first.jpeg";
-import news from "../images/final2.JPG";
 import colour from "../images/colour.jpeg";
 import monkey from "../images/monkey.jpeg";
 import './quiz.css';
@@ -53,8 +52,6 @@ const Quiz = () => {
         console.log("new " + ans);
         const animalData = determineAnimal(ans);
         console.log(animalData.animal);
-        // Display the result (similar to previous code)
-        // ...
         setResult(
             <div className="flex flex-col items-center justify-center h-screen">
     <h1 className="text-2xl font-bold mb-4 text-black">Result</h1>
@@ -74,15 +71,15 @@ const Quiz = () => {
         );
     };
     const determineAnimal = (ans) => {
-        if (ans <= 8) {
+        if (ans <= 10) {
             return { animal: 'Rabbit', imageSrc: 'https://images.pexels.com/photos/4001296/pexels-photo-4001296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', description: 'You are calm and peaceful ! Like to keep things organised ! Artistic person' };
-        } else if (ans > 8 && ans <= 14) {
+        } else if (ans > 10 && ans <= 20) {
             return { animal: 'Meerkat', imageSrc: 'https://images.pexels.com/photos/1454786/pexels-photo-1454786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', description: 'You are selfless and caring ! little anxious and introvert' };
-        } else if (ans > 14 && ans <= 20) {
+        } else if (ans > 20 && ans <= 30) {
             return { animal: 'Fox', imageSrc: 'https://images.pexels.com/photos/4934920/pexels-photo-4934920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', description: 'You are mischievous, skilful and self-assured' };
-        } else if (ans > 20 && ans <= 25) {
+        } else if (ans > 30 && ans <= 36) {
             return { animal: 'Bear', imageSrc: 'https://images.pexels.com/photos/1466592/pexels-photo-1466592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', description: 'You are empathetic but a little fearful' };
-        } else if (ans > 25 && ans <= 100) {
+        } else if (ans > 36 && ans <= 50) {
             return { animal: 'Lion', imageSrc: 'https://images.pexels.com/photos/5306143/pexels-photo-5306143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', description: 'You can be a great Leader ! Fearless and Brave' };
         }
     };
@@ -127,7 +124,7 @@ const Quiz = () => {
                         type="radio"
                         id="blue"
                         name="color"
-                        value="5"
+                        value="2"
                         onClick={() => handleColorClick(5)}
                         className="hidden"
                     />
@@ -139,7 +136,7 @@ const Quiz = () => {
                         type="radio"
                         id="green"
                         name="color"
-                        value="5"
+                        value="3"
                         onClick={() => handleColorClick(5)}
                         className="hidden"
                     />
@@ -153,7 +150,7 @@ const Quiz = () => {
                         type="radio"
                         id="purple"
                         name="color"
-                        value="5"
+                        value="2"
                         onClick={() => handleColorClick(5)}
                         className="hidden"
                     />
@@ -165,7 +162,7 @@ const Quiz = () => {
                         type="radio"
                         id="yellow"
                         name="color"
-                        value="5"
+                        value="4"
                         onClick={() => handleColorClick(5)}
                         className="hidden"
                     />
@@ -196,7 +193,7 @@ const Quiz = () => {
     style={{ backgroundImage: `url(${monkey})`, minHeight: '100vh', lg: { top: '10vh', marginTop: '0' } }}
   >
     <div className="absolute inset-0 flex top-52 left-28">
-      <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-700">What do you like to do in your free time?</h1>
+      <h1 className="text-lg mt-3 sm:text-xl lg:text-2xl font-bold text-gray-700">What do you like to do in your free time?</h1>
     </div>
 
 
