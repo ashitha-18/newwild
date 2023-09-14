@@ -2,11 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WaitlistSignup from './home';
 import Animals from './animals';
 import About from './about';
 import OrganizationForm from './organisation';
+
 
 function Mynavbar() {
   return (
@@ -15,7 +16,7 @@ function Mynavbar() {
       <Container>
         
         <Nav className="ml-auto">
-          <Nav.Link href="/" className="text-orange-500 hover:text-orange-400 mx-2">Home</Nav.Link>
+          <Nav.Link href="/" className="text-orange-500 hover:text-orange-400 mx-2 ">Home</Nav.Link>
           <Nav.Link href="/about" className="text-orange-500 hover:text-orange-400 mx-2">About</Nav.Link>
           <Nav.Link href="/donate" className="text-orange-500 hover:text-orange-400 mx-2">Donate</Nav.Link>
           <Nav.Link href="/organisation" className="text-orange-500 hover:text-orange-400 mx-2">Animal Add</Nav.Link>
@@ -27,7 +28,7 @@ function Mynavbar() {
           <Route path="/" exact element={<WaitlistSignup/>} />
           <Route path="/about" element={< About/>} />
           <Route path="/donate" element={<Animals/>}  />
-          <Route path="/organisation" element={<OrganizationForm/>}  />
+          <Route path="/organisation" element={<OrganizationForm />}  />
     </Routes>
 
 </Router>

@@ -1,6 +1,5 @@
 
 import './App.css';
-import New from './components/SupportTokenWrapper';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

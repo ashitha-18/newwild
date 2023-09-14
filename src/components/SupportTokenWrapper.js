@@ -1,12 +1,12 @@
 import { Contract, ethers } from 'ethers';
-import Wildpatron from "../SupportToken.json"; // Corrected import path
-
+import Wildpatron from "../SupportToken.json"; 
+/*
 export async function donate(amount) {
   try {
     console.log(amount);
     const contract = await getContract();
     
-    //const { ethereum } = window;
+    
     if (!window.ethereum) {
       console.error("Ethereum not found");
       return false;
@@ -26,8 +26,7 @@ export async function donate(amount) {
     to: recipient,
     value: am
   });
-  console.log("whatt");
-  // Often you may wish to wait until the transaction is mined
+  
   const receipt = await tx.wait();
   
   console.log(receipt);
@@ -40,7 +39,7 @@ export async function donate(amount) {
 
 }
 
-
+*/
 
 
 export async function getContract() {
@@ -62,5 +61,36 @@ export async function getContract() {
   } catch (error) {
     console.log("ERROR:", error);
     throw error; // Rethrow the error for handling in the calling function
+  }
+}
+
+// Add this function to your JavaScript file
+export async function donate(recipient, amount) {
+  try {
+    const contract = await getContract();
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts',
+    });
+    
+    console.log(amount);
+    const am = ethers.parseEther(amount);
+    const estimation = await contract.transfer.estimateGas(recipient, am);
+    console.log(estimation);
+    const  provider = new ethers.BrowserProvider(window.ethereum);
+    const  signer = await provider.getSigner();
+    const tx = await signer.sendTransaction({
+    to: recipient,
+    value: am
+  })
+
+    // Wait for the transaction to be mined
+    await tx.wait();
+
+    console.log('Funds withdrawn successfully.');
+
+    return true;
+  } catch (error) {
+    console.error('Withdrawal error:', error);
+    return false;
   }
 }

@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { donate } from "./SupportTokenWrapper";
 import image from "../images/22.jpeg";
 
+
 const AnimalCard = ({
   imageSrc,
   name,
@@ -13,10 +14,13 @@ const AnimalCard = ({
   onDonate,
 }) => {
   const [donationAmount, setDonationAmount] = useState("");
+  
+
 
   const handleDonationSubmit = (event) => {
     event.preventDefault();
-    onDonate(donationAmount);
+    const recipient = address; 
+    onDonate(recipient,donationAmount);
     setDonationAmount("");
   };
 
@@ -62,12 +66,13 @@ const AnimalCard = ({
   );
 };
 
+
 const animals = [
   {
     name: "Leo",
     description: "Lion - aged 5 years ",
     organisation: "WildHome id : 147",
-    address: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    address: "0x2Cb96CDb27e6604c8daDB0F22fA3f3b8f39e1182",
     imageSrc: "https://images.pexels.com/photos/12004890/pexels-photo-12004890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
@@ -82,7 +87,6 @@ const animals = [
 const Animals = () => {
   const [donated, setDonated] = useState(false);
   const [connected, setConnected] = useState(false);
-
   const connectToMetaMask = async () => {
     try {
       if (window.ethereum) {
@@ -99,9 +103,10 @@ const Animals = () => {
     }
   };
 
-  const handleDonate = async (amount) => {
+  const handleDonate = async (recipient, amount) => {
     try {
-      const donationResult = await donate(amount);
+      
+      const donationResult = await donate(recipient,amount);
       if (donationResult) {
         alert("Donation successful!");
       }
@@ -109,6 +114,7 @@ const Animals = () => {
       console.error(error);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-cover bg-center relative flex flex-col justify-center items-center" style={{ backgroundImage: `url(${image})` }}>
@@ -119,11 +125,12 @@ const Animals = () => {
         >
           Connect to MetaMask
         </button>
-        <div className="animal-card container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4" style={{position: "relative", left: '25%'}}>
+        <div className="animal-card container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 text-center" style={{position: "relative", left: '25%'}}>
         {animals.map((animal, index) => (
           <div key={index} className="w-full px-4 mb-8" >
             <AnimalCard {...animal} onDonate={handleDonate} />
           </div>
+          
         ))}
       </div>
       </div>
