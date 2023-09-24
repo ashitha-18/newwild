@@ -1,3 +1,8 @@
+# WildPatron 
+Hosted in Vercel
+( Remember to choose Sepolia testnet )
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
