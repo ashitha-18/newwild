@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import first from "../images/first.jpeg";
 import colour from "../images/colour.jpeg";
 import monkey from "../images/monkey.jpeg";
+import arrow from "../images/arrow.png";
 import './quiz.css';
 
 const Quiz = () => {
@@ -97,7 +98,12 @@ const Quiz = () => {
         <div
         className="w-full h-auto bg-contain bg-no-repeat bg-center relative p-8 absolute inset-0 top-44 flex items-center justify-center"
         style={{ backgroundImage: `url(${first})`, minHeight: '100vh'}}
+        >
+          <div
+        className="w-full h-auto bg-contain bg-no-repeat bg-center relative p-8 absolute inset-0 top-44 flex items-center justify-center"
+        style={{ backgroundImage: `url(${arrow})`, minHeight: '100vh'}}
         ></div>
+        </div>
 </article>
         <article  id="colorSection">
         <div
